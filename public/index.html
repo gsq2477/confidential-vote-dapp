@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConfidentialVote DApp</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.ethers.io/lib/ethers-5.7.umd.min.js"></script>
+    <script src="@zama.ai/fhevm-js"></script> <!-- Zama FHE JS 库，实际需安装 -->
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto p-4">
+        <h1 class="text-3xl font-bold">ConfidentialVote</h1>
+        <button id="connectWallet" class="bg-blue-500 text-white p-2">Connect Wallet</button>
+        <div id="proposalForm" class="mt-4 hidden">
+            <input id="proposalDesc" placeholder="Proposal Description" class="border p-2">
+            <input id="duration" type="number" placeholder="Duration (seconds)" class="border p-2">
+            <button id="createProposal" class="bg-green-500 text-white p-2">Create Proposal</button>
+        </div>
+        <div id="voteForm" class="mt-4 hidden">
+            <input id="proposalId" type="number" placeholder="Proposal ID" class="border p-2">
+            <input id="choice" type="number" placeholder="Choice (0/1)" class="border p-2">
+            <input id="shares" type="number" placeholder="Shares" class="border p-2">
+            <button id="castVote" class="bg-purple-500 text-white p-2">Cast Encrypted Vote</button>
+        </div>
+        <p id="result"></p>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
